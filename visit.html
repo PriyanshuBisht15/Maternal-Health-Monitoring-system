@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ANC Visit Monitoring</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eef2ff,#fdf2f8);
+padding:40px;
+}
+
+.box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+h1{
+margin-bottom:20px;
+color:#111827;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+label{
+font-size:14px;
+font-weight:600;
+margin-bottom:5px;
+display:block;
+}
+
+input{
+width:100%;
+padding:12px;
+border:1px solid #d1d5db;
+border-radius:10px;
+}
+
+.full{
+grid-column:1/3;
+}
+
+button{
+margin-top:25px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,#7c3aed,#ec4899);
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.95;
+}
+
+</style>
+</head>
+<body>
+
+<div class="box">
+
+<h1>ANC Visit Monitoring</h1>
+
+<form action="/predict" method="POST">
+
+<div class="grid">
+
+<div>
+<label>Age</label>
+<input type="number" name="Age" required>
+</div>
+
+<div>
+<label>Systolic BP</label>
+<input type="number" name="Systolic BP" required>
+</div>
+
+<div>
+<label>Diastolic</label>
+<input type="number" name="Diastolic" required>
+</div>
+
+<div>
+<label>Blood Sugar</label>
+<input type="number" step="0.1" name="BS" required>
+</div>
+
+<div>
+<label>Body Temp</label>
+<input type="number" step="0.1" name="Body Temp" required>
+</div>
+
+<div>
+<label>BMI</label>
+<input type="number" step="0.1" name="BMI" required>
+</div>
+
+<div>
+<label>Heart Rate</label>
+<input type="number" name="Heart Rate" required>
+</div>
+
+<div>
+<label>Previous Complications (0/1)</label>
+<input type="number" name="Previous Complications" required>
+</div>
+
+<div>
+<label>Preexisting Diabetes (0/1)</label>
+<input type="number" name="Preexisting Diabetes" required>
+</div>
+
+<div>
+<label>Gestational Diabetes (0/1)</label>
+<input type="number" name="Gestational Diabetes" required>
+</div>
+
+<div class="full">
+<label>Mental Health (0/1)</label>
+<input type="number" name="Mental Health" required>
+</div>
+
+</div>
+
+<button type="submit">Predict Risk</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
